@@ -1,2 +1,2 @@
-# Service-
+# Service
 holds data service application
