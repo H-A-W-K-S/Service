@@ -1,3 +1,8 @@
+--
+-- Fall 2022
+--
+
+
 --SQL Data Service for MergeSplit Game
 DROP TABLE IF EXISTS Player
 DROP TABLE IF EXISTS GameType
