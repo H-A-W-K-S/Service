@@ -6,24 +6,20 @@
 --
 
 
--- Get the list of players
+-- Get the name and score 
+SELECT Player.ID, name, score
+FROM Player, Game, PlayerGame
+WHERE Player.ID = PlayerGame.PlayerID
+AND Game.ID = PlayerGame.gameInstanceID
+ORDER BY score DESC;
 
-SELECT *
-    FROM PLAYER;
+-- Get player names
+SELECT name
+FROM Player;
 
--- Get the GameTypes
-SELECT *
-    FROM GameInstance;
-
--- Get the difficulties of game in descending order
-SELECT gameTypeRefID
-    FROM GameInstance
-    ORDER BY gameTypeRefID DESC;
-
--- Get the highest winstreaks
-SELECT PlayerScores.winStreak
-    FROM PlayerScores, Player
-    WHERE PlayerScores.playerID = Player.ID
-    ORDER BY winStreak DESC
-    LIMIT 1;
+-- get login information if both mathces
+SELECT email, password
+FROM Player
+WHERE Player.password = "asdf1234"
+AND Player.email = "39393@gmail.com";
 
