@@ -10,7 +10,7 @@
 SELECT Player.ID, name, score
 FROM Player, Game, PlayerGame
 WHERE Player.ID = PlayerGame.PlayerID
-AND Game.ID = PlayerGame.gameInstanceID
+AND Game.ID = PlayerGame.gameID
 ORDER BY score DESC;
 
 -- Get player names
