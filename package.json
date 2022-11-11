@@ -1,0 +1,23 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "This repository holds our data service application for the [MergeSplit project]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-A-W-K-S/Service.git"
+  },
+  "author": "HaimHong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H-A-W-K-S/Service/issues"
+  },
+  "homepage": "https://github.com/H-A-W-K-S/Service#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg-promise": "^10.12.1"
+  }
+}
