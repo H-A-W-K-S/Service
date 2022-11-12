@@ -17,6 +17,15 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello mergeSplit server is running").end();
 });
 
+app.use(router);
+app.use((err, req, res) => {
+    if (app.get('env') === "development") {
+        console.log(err);
+    }
+    res.sendStatus(err.status || 500);
+});
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
 router.get("/scores", readScores);
 
 function readScores(req, res, next) {
