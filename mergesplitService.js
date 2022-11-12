@@ -30,7 +30,7 @@ router.get("/scores", readScores);
 
 function readScores(req, res, next) {
   db.many(
-    "SELECT score FROM PlayerGame"
+    "SELECT Player.ID, name, score FROM Player, Game, PlayerGame WHERE Player.ID = PlayerGame.PlayerID AND Game.ID = PlayerGame.gameID ORDER BY score DESC"
   )
     .then((data) => {
       res.send(data);
