@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
 
 app.use(router);
 app.use((err, req, res) => {
-    if (app.get('env') === "development") {
-        console.log(err);
-    }
-    res.sendStatus(err.status || 500);
+  if (app.get("env") === "development") {
+    console.log(err);
+  }
+  res.sendStatus(err.status || 500);
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
@@ -30,7 +30,7 @@ router.get("/scores", readScores);
 
 function readScores(req, res, next) {
   db.many(
-    "SELECT Player.ID, name, score FROM Player, Game, PlayerGame WHERE Player.ID = PlayerGame.PlayerID AND Game.ID = PlayerGame.gameID ORDER BY score DESC"
+    "SELECT Player.ID, name, score FROM Player, Game, PlayerGame WHERE Player.ID = PlayerGame.PlayerID AND Game.ID = PlayerGame.gameID AND PlayerGame.gameID = 1 ORDER BY score DESC"
   )
     .then((data) => {
       res.send(data);

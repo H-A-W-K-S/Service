@@ -7,10 +7,11 @@
 
 
 -- Get the name and score 
-SELECT Player.ID, name, score
-FROM Player, Game, PlayerGame
-WHERE Player.ID = PlayerGame.PlayerID
-AND Game.ID = PlayerGame.gameID
+SELECT Player.ID, name, score 
+FROM Player, Game, PlayerGame 
+WHERE Player.ID = PlayerGame.PlayerID 
+AND Game.ID = PlayerGame.gameID 
+AND PlayerGame.gameID = 1 
 ORDER BY score DESC;
 
 -- Get player names
